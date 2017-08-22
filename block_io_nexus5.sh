@@ -1,6 +1,5 @@
 #!/bin/bash
 
-DEBUGFS_PATH=/sys/kernel/debug/tracing
 DEVICE_PATH=/dev/block/platform/msm_sdcc.1/by-name
 CPU_FREQ_PATH=/sys/devices/system/cpu
 MMCBLK_PATH=/dev/block/mmcblk0
@@ -11,7 +10,6 @@ function block_io_tracing_setting()
     mount -t debugfs debugfs /sys/kernel/debug/
 
     mount -o remount,rw $DEVICE_PATH/system /system
-    #/data/local/busybox --install -s /system/xbin
     sleep 30
 
     stop mpdecision
